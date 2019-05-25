@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    //- link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="/stylesheets/apitest.css")
+    script(src='../javascripts/apitest.js') 
+  body    
+    block content
+        h1(style="text-align: center") All Issues for test
+        .issueform.form(style="margin: auto")
+                h1 Create Issue
+                form(action="/api/issues/" method="post")
+                        .top
+                            input(type="text", name="title" placeholder="Title" required)
+                            input(type="text", name="created" placeholder="Created by" required)
+                        textarea(name="text_issue", cols="30", rows="5" placeholder="Text" required)
+                        .bottom
+                            input(type="text", name="assigned" placeholder="(opt)assigned to")
+                            input(type="text", name="status" placeholder="(opt)Status Text")
+                        button(type="submit") Submit
+
+        .allissue
+            ul#issueslist            
+                    
